@@ -5,7 +5,7 @@ DONE="\033[42;30m DONE \033[0m"
 INFO="\033[44;30m INFO \033[0m"
 
 eslint_path='node_modules/.bin/eslint';
-echo 11
+
 if [[ ! -x $eslint_path ]];
 then
     echo 'please npm i eslint';
