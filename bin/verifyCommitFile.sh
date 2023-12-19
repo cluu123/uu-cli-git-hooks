@@ -12,11 +12,11 @@ then
     exit 1;
 fi;
 
-GIT_FILES=$(git diff --cached --name-only --diff-filter=ACM);
+GIT_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E "^src.*\.(js|vue)$");
 
 for i in $GIT_FILES;
 do 
-    $eslint_path $i;
+    $eslint_path $i --quiet;
     if [[ $? == 0 ]];
     then
         echo "$INFO \033[32m检查通过 $i\033[0m"
